@@ -57,20 +57,20 @@ fi
 
 #MAJOR=$(curl -s http://www.byond.com/download/build/ | gr 'href="\d+/"' | cut -c 7-9 | sort -r | head -n 1)
 #MAJORURL=
-FULLVER=512.1488_byond.zip
-FULLURL=http://www.byond.com/download/build/512/512.1488_byond.zip
+FULLVER=514.1575_byond.zip
+FULLURL=http://www.byond.com/download/build/514/514.1575_byond.zip
 
 if [ ! -d "$SS13DIR/drive_c/Program Files/BYOND" ]
 then
     echo -e "${BLUE}Did not detect any BYOND install, installing...${NC}"
     curl -L -O $FULLURL 2>&1 >log/wget.log
     mkdir -p ziptmp
-    unzip -qq 512.1488_byond.zip -d ziptmp
+    unzip -qq 514.1575_byond.zip -d ziptmp
     ls ziptmp
     mv ziptmp/byond $SS13DIR/drive_c/Program\ Files/BYOND
-    rm ./512.1488_byond.zip
+    rm ./514.1575_byond.zip
     rm -rf ziptmp
-    echo "512.1461_byond.zip" > $SS13DIR/.byondver
+    echo "514.1575_byond.zip" > $SS13DIR/.byondver
     echo -e "${BLUE}Done!${NC}"
 else
     echo -e "${BLUE}Detected BYOND install with version ${DETECTED}.${NC}"
